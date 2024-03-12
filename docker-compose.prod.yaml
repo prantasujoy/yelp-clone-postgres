@@ -10,7 +10,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - NODE_ENV=production
+      - REACT_APP_NODE_ENV=production
 
   server:
     image: server-prod-image
@@ -19,6 +19,7 @@ services:
     container_name: server-prod-container
     environment:
       - NODE_ENV=production
+      - PORT=80
 
   nginx:
     image: nginx:stable-alpine

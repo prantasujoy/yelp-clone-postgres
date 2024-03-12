@@ -12,7 +12,8 @@ services:
     ports:
       - "5173:5173"
     environment:
-      - NODE_ENV=development
+      - REACT_APP_NODE_ENV=development
+
     network_mode: host
 
   server:
@@ -27,3 +28,4 @@ services:
       - "3005:3005"
     environment:
       - NODE_ENV=development
+      - PORT=3005

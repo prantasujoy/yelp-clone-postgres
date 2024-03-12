@@ -1,9 +1,19 @@
 import axios from "axios";
 
+let baseURL = "";
+
+if (process.env.REACT_APP_NODE_ENV == "production") {
+  port = 80;
+}
+
+if (process.env.REACT_APP_NODE_ENV == "development") {
+  port = 3005;
+}
+
 class AxiosService {
   constructor() {
     this.apiClient = axios.create({
-      baseURL: "http://localhost:3005/api/v1",
+      baseURL: `http://localhost:${port}/api/v1`,
       withCredentials: false,
       headers: {
         "Content-Type": "application/json",
