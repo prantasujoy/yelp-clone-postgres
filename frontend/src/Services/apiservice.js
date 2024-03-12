@@ -2,11 +2,11 @@ import axios from "axios";
 
 let baseURL = "";
 
-if ((REACT_APP_NODE_ENV = production)) {
+if ((REACT_APP_NODE_ENV = "production")) {
   baseURL = "http://server:3005/api/v1";
 }
 
-if ((REACT_APP_NODE_ENV = development)) {
+if ((REACT_APP_NODE_ENV = "development")) {
   baseURL = "http://localhost:3005/api/v1";
 }
 
