@@ -1,9 +1,14 @@
 import axios from "axios";
 
-let baseURL =
-  process.env.REACT_APP_NODE_ENV === "production"
-    ? "http://server:3005/api/v1"
-    : "http://localhost:3005/api/v1";
+let baseURL = "";
+
+if ((REACT_APP_NODE_ENV = production)) {
+  baseURL = "http://server:3005/api/v1";
+}
+
+if ((REACT_APP_NODE_ENV = development)) {
+  baseURL = "http://localhost:3005/api/v1";
+}
 
 class AxiosService {
   constructor() {
