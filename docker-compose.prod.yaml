@@ -19,7 +19,6 @@ services:
     container_name: server-prod-container
     environment:
       - NODE_ENV=production
-      - PORT=80
 
   nginx:
     image: nginx:stable-alpine
