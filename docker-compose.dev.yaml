@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  client:
+    image: fe-dev-1
+    build:
+      dockerfile: Dockerfile.dev
+    container_name: fe-dev-container
+    volumes:
+      - ./frontend:/client
+      - /client/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    network_mode: host
+
+  server:
+    image: be-dev-image
+    build:
+      dockerfile: Dockerfile.dev
+    container_name: be-dev-container
+    volumes:
+      - ./backend:/app:ro
+      - /app/node_modules
+    ports:
+      - "3005:3005"
+    environment:
+      - NODE_ENV=development
